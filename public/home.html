@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodov - Food Delivery & Recipes</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #home {
+            background-image: url("bg1.jpeg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: white;
+            position: relative;
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+        }
+
+        .nav-links {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li {
+            display: inline;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .signup-btn {
+            background-color: #ff5a5f;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px;
+            height: 100vh;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-content {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .order-btn {
+            padding: 15px 30px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        /* Service Section */
+        .services {
+            padding: 40px;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .services h2 {
+            margin-bottom: 20px;
+        }
+
+        .services-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .service-card {
+            background: #f4f4f4;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+        }
+
+        .service-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Recipe Section */
+        .recipe-list {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .recipe-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            margin: 10px; 
+        }
+
+        .recipe-card img {
+            width: 100%; 
+            height: 200px; 
+            object-fit: cover; 
+            border-radius: 10px; 
+        }
+
+        /* Footer */
+        footer {
+            padding: 20px;
+            text-align: center;
+            background-color: #333;
+            color: white;
+        }
+
+        .social-media {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-media li {
+            display: inline;
+        }
+
+        .social-media a {
+            color: white;
+            text-decoration: none;
+            font-size: 24px; 
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Foodov</div>
+            <ul class="nav-links">
+                <li><a href="#" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" onclick="showPage('recipes')">Recipes</a></li>
+                <li><a href="#" onclick="showPage('services')">Services</a></li>
+                <li><a href="#" onclick="showPage('shop')">Shop</a></li>
+                <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+            </ul>
+            <button class="signup-btn" onclick="window.location.href='register.html';">Register</button>
+            <button class="signup-btn" onclick="window.location.href='login.html';">Login</button>
+        </nav>
+    </header>
+
+    <!-- Home Page -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Food delivery within <span class="highlight">30 minutes</span></h1>
+            <p>Home delivery and online reservation system for restaurants, cafes, medicine, food & groceries.</p>
+            <button class="order-btn">Order Now</button>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services" style="display: none;">
+        <h2>Our Services</h2>
+        <div class="services-container">
+            <div class="service-card">
+                <img src="i-stock.jpeg" alt="Delivery Service">
+                <h3>Fast Delivery</h3>
+                <p>Get your food delivered to your doorstep in no time.</p>
+            </div>
+            <div class="service-card">
+                <img src="cateringPerson.jpg" alt="Catering Service">
+                <h3>Catering</h3>
+                <p>We provide catering services for all your events.</p>
+            </div>
+            <div class="service-card">
+                <img src="hotel-reservation.jpg" alt="Reservation Service">
+                <h3>Online Reservations</h3>
+                <p>Book your table online with ease.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Page -->
+    <section id="shop" style="display: none;">
+        <h1>Shop</h1>
+        <p>Browse our selection of food items, cooking tools, and exclusive recipes.</p>
+    </section>
+
+    <!-- Contact Page -->
+    <section id="contact" style="display: none;">
+        <h1>Contact Us</h1>
+        <p>If you have any questions, feel free to reach out!</p>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit" class="order-btn">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Recipe List Page -->
+    <section id="recipes" class="recipe-list" style="display: none;">
+        <h1>Our Popular Recipes</h1>
+        <div class="recipes-container" style="display: flex; justify-content: center; flex-wrap: wrap;">
+            <div class="recipe-card">
+                <img src="image1.png" alt="Burger">
+                <h3>Classic Cheeseburger</h3>
+                <p>Juicy beef patty with cheddar cheese, lettuce, and tomatoes.</p>
+                <button onclick="showRecipe(1)" class="order-btn">Order Now</button>
+            </div>
+            <div class="recipe-card">
+                <img src="pizza1.jpeg" alt="Pizza">
+                <h3>Margherita Pizza</h3>
+                <p>Fresh basil, mozzarella, and tomato sauce on a crispy crust.</p>
+                <button onclick="showRecipe(2)" class="order-btn">Order Now</button>
+            </div>
+            <div class="recipe-card">
+                <img src="pasta.jpeg" alt="Pasta">
+                <h3>Spaghetti Carbonara</h3>
+                <p>Italian pasta with creamy sauce, pancetta, and Parmesan.</p>
+                <button onclick="showRecipe(3)" class="order-btn">Order Now</button>
+            </div>
+            <div class="recipe-card">
+                <img src="briyani.jpeg" alt="Briyani">
+                <h3>Briyani</h3>
+                <p>Biryani is a popular rice dish made with spices, meat, and vegetables, known for its rich flavors and regional variations.</p>
+            
+                <button onclick="showRecipe(4)" class="order-btn">Order Now</button>
+            </div>
+            <div class="recipe-card">
+                <img src="cake.jpeg" alt="Strawberry cake">
+                <h3>Strawberry Cake</h3>
+                <p>Cake is a sweet baked dessert typically made from flour, sugar, eggs, and butter, often enjoyed at celebrations and special occasion.</p>
+                <button onclick="showRecipe(5)" class="order-btn">Order Now</button>
+            </div>
+            <div class="recipe-card">
+                <img src="ice cream.jpeg" alt="icecream">
+                <h3>Icecream</h3>
+                <p>Ice cream is a cold, sweet dessert made from milk, cream, and sugar, often flavored with fruits, chocolate, or other ingredients.</p>
+                <button onclick="showRecipe(6)" class="order-btn">Order Now</button>
+            </div> 
+            <div class="recipe-card">
+                <img src="panner.jpeg" alt="panner">
+                <h3>Panner</h3>
+                <p>Paneer is a fresh, soft cheese commonly used in Indian cuisine, known for its mild flavor and versatility in dishes like curries and snacks.</p>
+                <button onclick="showRecipe(7)" class="order-btn">Order Now</button>
+            </div>
+            <div class="recipe-card">
+                <img src="momos.jpeg" alt="momos">
+                <h3>Momos</h3>
+                <p>Momos are steamed dumplings filled with vegetables or meat, originating from Tibet and widely enjoyed in South Asia as a popular street food.</p>
+                <button onclick="showRecipe(8)" class="order-btn">Order Now</button>
+            </div> 
+
+        </div>
+    </section>
+
+    <!-- Recipe Detail Page -->
+    <section id="recipe-detail" class="recipe-detail" style="display: none;">
+        <div class="recipe-header">
+            <img id="recipe-image" src="image1.png" alt="Recipe Image">
+            <div class="recipe-info">
+                <h1 id="recipe-title">Classic Cheeseburger</h1>
+                <p id="recipe-description">Juicy beef patty with cheddar cheese, lettuce, and tomatoes.</p>
+                <button class="order-btn">Order Now</button>
+            </div>
+        </div>
+
+        <div class="recipe-content">
+            <h2>Ingredients</h2>
+            <ul id="ingredients-list"></ul>
+
+            <h2>Preparation</h2>
+            <p id="preparation-steps">Grill the beef patty and assemble the burger with cheese, lettuce, tomatoes.</p>
+        </div>
+            
+            
+             
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Foodov. All rights reserved.</p>
+        <ul class="social-media">
+            <li><a href="https://www.facebook.com">Facebook</a></li>
+            <li><a href="https://www.twitter.com">Twitter</a></li>
+            <li><a href="https://www.instagram.com">Instagram</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        // Recipe Data
+        const recipes = {
+            1: {
+                title: 'Classic Cheeseburger',
+                image: 'image1.png',
+                description: 'Juicy beef patty with cheddar cheese, lettuce, and tomatoes.',
+                ingredients: ['Beef patty', 'Cheddar cheese', 'Lettuce', 'Tomatoes', 'Burger bun'],
+                preparation: 'Grill the beef patty until done. Assemble the burger with cheese, lettuce, tomatoes, and serve with your favorite sauce.'
+            },
+            2: {
+                title: 'Margherita Pizza',
+                image: 'pizza1.jpeg',
+                description: 'Fresh basil, mozzarella, and tomato sauce on a crispy crust.',
+                ingredients: ['Pizza dough', 'Mozzarella', 'Tomato sauce', 'Fresh basil'],
+                preparation: 'Spread tomato sauce on pizza dough, add mozzarella, bake, and garnish with fresh basil.'
+            },
+            3: {
+                title: 'Spaghetti Carbonara',
+                image: 'pasta.jpeg',
+                description: 'Italian pasta with creamy sauce, pancetta, and Parmesan.',
+                ingredients: ['Spaghetti', 'Pancetta', 'Eggs', 'Parmesan cheese'],
+                preparation: 'Cook spaghetti, fry pancetta, and mix with eggs and Parmesan for a creamy sauce.'
+            },
+            4: {
+                title: "Chicken Biryani",
+                image: "briyani.jpeg",
+                description: "Spicy rice dish with marinated chicken and aromatic spices.",
+                ingredients: ["Chicken", "Basmati Rice", "Yogurt", "Spices", "Onions"],
+                preparation: "Cook chicken with spices and layer with rice."
+            },
+            5: {
+                title: "Strawberry Cake",
+                image: "cake.jpeg",
+                description: "Rich and moist strawberry cake with creamy frosting.",
+                ingredients: ["Flour", "Cocoa Powder", "Sugar", "Eggs", "Butter"],
+                preparation: "Mix ingredients and bake in a cake pan."
+            },
+            6: {
+                title: "Ice Cream",
+                image: "ice cream.jpeg",
+                description: "Delicious creamy ice cream available in various flavors.",
+                ingredients: ["Milk", "Sugar", "Flavorings", "Cream"],
+                preparation: "Churn and freeze the mixture."
+            },
+            7: {
+                title: "Paneer Sticks",
+                image: "panner.jpeg",
+                description: "Crispy paneer sticks served with a tangy dip.",
+                ingredients: ["Paneer", "Breadcrumbs", "Spices", "Oil"],
+                preparation: "Coat paneer in breadcrumbs and fry."
+            },
+            8: {
+                title: "Vegetable Momos",
+                image: "momos.jpeg",
+                description: "Steamed dumplings filled with mixed vegetables.",
+                ingredients: ["Momo Dough", "Mixed Vegetables", "Spices", "Soy Sauce"],
+                preparation: "Fill and steam the momos."
+            }
+            
+            
+        };
+
+        
+
+        // Show page function
+        function showPage(page) {
+            const pages = ['home', 'recipes', 'services', 'shop', 'contact', 'recipe-detail'];
+            pages.forEach(p => {
+                document.getElementById(p).style.display = (p === page) ? 'block' : 'none';
+            });
+        }
+
+        // Show recipe details
+        function showRecipe(recipeId) {
+            const recipe = recipes[recipeId];
+            document.getElementById('recipe-image').src = recipe.image;
+            document.getElementById('recipe-title').innerText = recipe.title;
+            document.getElementById('recipe-description').innerText = recipe.description;
+
+            const ingredientsList = document.getElementById('ingredients-list');
+            ingredientsList.innerHTML = '';
+            recipe.ingredients.forEach(ingredient => {
+                const li = document.createElement('li');
+                li.innerText = ingredient;
+                ingredientsList.appendChild(li);
+            });
+
+            document.getElementById('preparation-steps').innerText = recipe.preparation;
+            document.getElementById('recipes').style.display = 'none';
+            document.getElementById('recipe-detail').style.display = 'block';
+        }
+
+        
+
+        // Initial page load
+        showPage('home');
+
+        // function showPage(pageId) {
+        //     const sections = document.querySelectorAll('section');
+        //     sections.forEach(section => {
+        //         section.style.display = 'none';
+        //     });
+        //     document.getElementById(pageId).style.display = 'block';
+        // }
+    </script>
+</body>
+</html>
+
+    
+
+    

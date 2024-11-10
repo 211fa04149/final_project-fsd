@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('bg.jpeg');
+    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  /* Background image URL */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+img {
+    opacity: 1;
+  }
+/* Form Container */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+/* Registration Form Box */
+.form-box {
+    background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent white background */
+    border-radius: 15px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+    backdrop-filter: blur(5px); /* Adds a subtle blur effect behind the form for better readability */
+}
+
+.form-box h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-box input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.form-box button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form-box button:hover {
+    background-color: #218838;
+}
+
+.form-box .alt-action {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.form-box .alt-action a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.form-box .alt-action a:hover {
+    text-decoration: underline;
+}
+
+/* Circular Food Image */
+.food-img {
+    position: absolute;
+    top: -40px;
+    right: 10px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
