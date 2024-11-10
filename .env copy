@@ -1,0 +1,3 @@
+# MONGODB_URI=mongodb+srv://achutakavya554:Kavya123@cluster1.75wr8.mongodb.net/food_delivery_app?retryWrites=true&w=majority&appName=Cluster1
+
+MONGODB_URI= mongodb://localhost:27017/food-delivery-app
